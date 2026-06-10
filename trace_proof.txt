@@ -1,0 +1,147 @@
+[
+  {
+    "trace_id": "cargo-1",
+    "perception_event": {
+      "trace_id": "cargo-1",
+      "vessel_type": "cargo",
+      "confidence_score": 0.6396,
+      "dominant_freq_hz": 98.0,
+      "anomaly_flag": false
+    },
+    "validation": {
+      "status": "ALLOW",
+      "reason": "Valid signal"
+    },
+    "intelligence_event": {
+      "trace_id": "cargo-1",
+      "vessel_type": "cargo",
+      "confidence": 0.6396,
+      "risk_level": "MEDIUM",
+      "validation_status": "ALLOW"
+    },
+    "state_event": {
+      "trace_id": "cargo-1",
+      "vessel_type": "cargo",
+      "risk_level": "MEDIUM",
+      "state": "WARNING",
+      "anomaly_flag": false,
+      "short_label": "Watch"
+    }
+  },
+  {
+    "trace_id": "speedboat-1",
+    "perception_event": {
+      "trace_id": "speedboat-1",
+      "vessel_type": "speedboat",
+      "confidence_score": 0.3922,
+      "dominant_freq_hz": 1127.0,
+      "anomaly_flag": false
+    },
+    "validation": {
+      "status": "ALLOW",
+      "reason": "Valid signal"
+    },
+    "intelligence_event": {
+      "trace_id": "speedboat-1",
+      "vessel_type": "speedboat",
+      "confidence": 0.3922,
+      "risk_level": "HIGH",
+      "validation_status": "ALLOW"
+    },
+    "state_event": {
+      "trace_id": "speedboat-1",
+      "vessel_type": "speedboat",
+      "risk_level": "HIGH",
+      "state": "ALERT",
+      "anomaly_flag": false,
+      "short_label": "Concern"
+    }
+  },
+  {
+    "trace_id": "submarine-1",
+    "perception_event": {
+      "trace_id": "submarine-1",
+      "vessel_type": "submarine",
+      "confidence_score": 0.1734,
+      "dominant_freq_hz": 36.0,
+      "anomaly_flag": true
+    },
+    "validation": {
+      "status": "ALLOW",
+      "reason": "Valid signal"
+    },
+    "intelligence_event": {
+      "trace_id": "submarine-1",
+      "vessel_type": "submarine",
+      "confidence": 0.1734,
+      "risk_level": "CRITICAL",
+      "validation_status": "ALLOW"
+    },
+    "state_event": {
+      "trace_id": "submarine-1",
+      "vessel_type": "submarine",
+      "risk_level": "CRITICAL",
+      "state": "CRITICAL",
+      "anomaly_flag": true,
+      "short_label": "Threat"
+    }
+  },
+  {
+    "trace_id": "low-1",
+    "perception_event": {
+      "trace_id": "low-1",
+      "vessel_type": "unknown",
+      "confidence_score": 0.2721,
+      "dominant_freq_hz": 44.0,
+      "anomaly_flag": false
+    },
+    "validation": {
+      "status": "ALLOW",
+      "reason": "Valid signal"
+    },
+    "intelligence_event": {
+      "trace_id": "low-1",
+      "vessel_type": "unknown",
+      "confidence": 0.2721,
+      "risk_level": "HIGH",
+      "validation_status": "ALLOW"
+    },
+    "state_event": {
+      "trace_id": "low-1",
+      "vessel_type": "unknown",
+      "risk_level": "HIGH",
+      "state": "ALERT",
+      "anomaly_flag": false,
+      "short_label": "Concern"
+    }
+  },
+  {
+    "trace_id": "anomaly-1",
+    "perception_event": {
+      "trace_id": "anomaly-1",
+      "vessel_type": "unknown",
+      "confidence_score": 0.0201,
+      "dominant_freq_hz": 390.0,
+      "anomaly_flag": true
+    },
+    "validation": {
+      "status": "ALLOW",
+      "reason": "Valid signal"
+    },
+    "intelligence_event": {
+      "trace_id": "anomaly-1",
+      "vessel_type": "unknown",
+      "confidence": 0.0201,
+      "risk_level": "CRITICAL",
+      "validation_status": "ALLOW"
+    },
+    "state_event": {
+      "trace_id": "anomaly-1",
+      "vessel_type": "unknown",
+      "risk_level": "CRITICAL",
+      "state": "CRITICAL",
+      "anomaly_flag": true,
+      "short_label": "Threat"
+    }
+  }
+]

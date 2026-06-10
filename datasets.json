@@ -1,0 +1,17 @@
+[
+    {
+        "dataset_id": "DS_WEATHER",
+        "status": "active",
+        "trust_score": 0.9
+    },
+    {
+        "dataset_id": "DS_AQI",
+        "status": "active",
+        "trust_score": 0.85
+    },
+    {
+        "dataset_id": "svacs",
+        "status": "active",
+        "trust_score": 0.9
+    }
+]

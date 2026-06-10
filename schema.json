@@ -1,0 +1,17 @@
+{
+ "type": "object",
+ "required": [
+  "signal_id",
+  "status",
+  "confidence_score",
+  "trace_id",
+  "reason"
+ ],
+ "properties": {
+  "signal_id": { "type": ["string", "null"] },
+  "status": { "type": "string" },
+  "confidence_score": { "type": "number" },
+  "trace_id": { "type": "string" },
+  "reason": { "type": "string" }
+ }
+}

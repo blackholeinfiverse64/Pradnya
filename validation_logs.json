@@ -1,0 +1,160 @@
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}
+{"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}
+{"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}
+{"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}
+{"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}
+{"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}
+{"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}
+{"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}
+{"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}
+{"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}
+{"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}
+{"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}
+{"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}
+{"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}
+{"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}
+{"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}
+{"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}
+{"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}
+{"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}
+{"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}
+{"trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "timestamp": "2026-04-18T10:23:18.791341", "type": "VALIDATION", "data": {"signal_id": "W_0", "status": "VALID", "confidence_score": 0.9, "trace_id": "acf999a9afdfaabee481b750fc75e0ffa1648ba14cb38b9187776d30e85a3bf9", "reason": "valid signal"}}
+{"trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "timestamp": "2026-04-18T10:23:18.853287", "type": "VALIDATION", "data": {"signal_id": "W_1", "status": "VALID", "confidence_score": 0.9, "trace_id": "bced283f0104ab45c3f4a63275c8233c3860204c5be1c06848d2ea1301063dea", "reason": "valid signal"}}
+{"trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "timestamp": "2026-04-18T10:23:18.883046", "type": "VALIDATION", "data": {"signal_id": "W_2", "status": "VALID", "confidence_score": 0.9, "trace_id": "0ea1438a7f5bb3795e73fa6d2519b8ef061aa26b6c6cf1be2d489d9878969bb1", "reason": "valid signal"}}
+{"trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "timestamp": "2026-04-18T10:23:18.907653", "type": "VALIDATION", "data": {"signal_id": "W_3", "status": "VALID", "confidence_score": 0.9, "trace_id": "df21adbad520267f9bc4f1bad437e10ad48169e9283cf105bf50d8626f2f25c3", "reason": "valid signal"}}
+{"trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "timestamp": "2026-04-18T10:23:18.931151", "type": "VALIDATION", "data": {"signal_id": "W_4", "status": "VALID", "confidence_score": 0.9, "trace_id": "af875553c7c270a2812212b61ebbfc1f22ec5761249ae42413f61a0434d68442", "reason": "valid signal"}}
+{"trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "timestamp": "2026-04-18T10:23:18.954082", "type": "VALIDATION", "data": {"signal_id": "W_5", "status": "VALID", "confidence_score": 0.9, "trace_id": "1bf64f439fff8c00cae14c760bd37ee71663d78c38aaadb8d0a700e5a46e393f", "reason": "valid signal"}}
+{"trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "timestamp": "2026-04-18T10:23:19.014048", "type": "VALIDATION", "data": {"signal_id": "W_6", "status": "VALID", "confidence_score": 0.9, "trace_id": "97a136fd54e7f06e5094a89845bd03a6ea28ea6a89949f388182547250fb58b9", "reason": "valid signal"}}
+{"trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "timestamp": "2026-04-18T10:23:19.079204", "type": "VALIDATION", "data": {"signal_id": "W_7", "status": "VALID", "confidence_score": 0.9, "trace_id": "1d1bccacc1c27945e84e75259247122503b8f71cfa70d1c2ac1debceb2b0ddc6", "reason": "valid signal"}}
+{"trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "timestamp": "2026-04-18T10:23:19.154718", "type": "VALIDATION", "data": {"signal_id": "W_8", "status": "VALID", "confidence_score": 0.9, "trace_id": "950beb908f75f7d8df188a77b74c56330e0f8826e2663dac16bba00b925c1579", "reason": "valid signal"}}
+{"trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "timestamp": "2026-04-18T10:23:19.188526", "type": "VALIDATION", "data": {"signal_id": "W_9", "status": "VALID", "confidence_score": 0.9, "trace_id": "2e47b45969b60a822309501b7913ccc945cd099709f4a5921fe64dcb791167fe", "reason": "valid signal"}}
+{"trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "timestamp": "2026-04-18T10:23:19.249601", "type": "VALIDATION", "data": {"signal_id": "W_10", "status": "VALID", "confidence_score": 0.9, "trace_id": "3a836703fda21bc13cd0af344c7b25e28663130c1358b5e0ee24067073941753", "reason": "valid signal"}}
+{"trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "timestamp": "2026-04-18T10:23:19.263676", "type": "VALIDATION", "data": {"signal_id": "W_11", "status": "VALID", "confidence_score": 0.9, "trace_id": "5fff4ef2fa800115eab6577b94b5a876d3375ca96a235c8ba5cbdfa7b16969bd", "reason": "valid signal"}}
+{"trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "timestamp": "2026-04-18T10:23:19.283791", "type": "VALIDATION", "data": {"signal_id": "W_12", "status": "VALID", "confidence_score": 0.9, "trace_id": "a2b66e4c91e9b14a54513199bbf79b11241f6615ab19c0788881280c5d766752", "reason": "valid signal"}}
+{"trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "timestamp": "2026-04-18T10:23:19.301819", "type": "VALIDATION", "data": {"signal_id": "W_13", "status": "VALID", "confidence_score": 0.9, "trace_id": "a115aa4076afb6439e03122a2934630ca0705f668b514c16154a672f97281a50", "reason": "valid signal"}}
+{"trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "timestamp": "2026-04-18T10:23:19.320447", "type": "VALIDATION", "data": {"signal_id": "W_14", "status": "VALID", "confidence_score": 0.9, "trace_id": "c8fa7d305a5d166ee9e2d03f407d013242abde02cafdca321c6f407c7b8f99d6", "reason": "valid signal"}}
+{"trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "timestamp": "2026-04-18T10:23:19.336710", "type": "VALIDATION", "data": {"signal_id": "W_15", "status": "VALID", "confidence_score": 0.9, "trace_id": "8f7df363efdb4c37f9030eaf383abf7f2697858c98e95cf1ef82c7ec706856a4", "reason": "valid signal"}}
+{"trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "timestamp": "2026-04-18T10:23:19.357235", "type": "VALIDATION", "data": {"signal_id": "W_16", "status": "VALID", "confidence_score": 0.9, "trace_id": "39905d8d541e2a672315301fac1a062b03cc403409ad07e569fe73e83ec0f803", "reason": "valid signal"}}
+{"trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "timestamp": "2026-04-18T10:23:19.395843", "type": "VALIDATION", "data": {"signal_id": "W_17", "status": "VALID", "confidence_score": 0.9, "trace_id": "bc800677157dc9168eb74fbf7791830bdc70fba4be2ff938495923cfe556d16c", "reason": "valid signal"}}
+{"trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "timestamp": "2026-04-18T10:23:19.440151", "type": "VALIDATION", "data": {"signal_id": "W_18", "status": "VALID", "confidence_score": 0.9, "trace_id": "6264cc4fec77ca1832ed965929d559a6386d120d68593c9641cba0958ea0d43e", "reason": "valid signal"}}
+{"trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "timestamp": "2026-04-18T10:23:19.462396", "type": "VALIDATION", "data": {"signal_id": "W_19", "status": "VALID", "confidence_score": 0.9, "trace_id": "c960bfae6da79d6f15f73694ff366f5b13806451dba578fb8b3dbe55508a3071", "reason": "valid signal"}}
