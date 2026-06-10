@@ -13,9 +13,16 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+DEFAULT_ORIGINS = "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173"
+allowed_origins = [
+    origin.strip()
+    for origin in os.getenv("ALLOWED_ORIGINS", DEFAULT_ORIGINS).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -56,8 +63,116 @@ def log_data(filename, log_type, data):
 
 
 # -----------------------------
+# SIGNAL PROCESSING (shared by dashboard + JSON APIs)
+# -----------------------------
+def process_signals(limit=20):
+    weather, aqi = load_data()
+    if weather is None or aqi is None:
+        return None, None, None
+
+    signals = convert_to_signals(weather, aqi)
+    if not isinstance(signals, list) or not signals:
+        return [], {}, {"total": 0, "high": 0, "medium": 0, "low": 0}
+
+    processed_outputs = []
+    api_signals = []
+    high = medium = low = 0
+
+    for signal in signals[:limit]:
+        if not isinstance(signal, dict):
+            continue
+
+        validation = validate_signal(signal)
+        if not isinstance(validation, dict) or validation.get("status") == "REJECT":
+            continue
+
+        analysis = analyze_signal(signal)
+        if not isinstance(analysis, dict):
+            continue
+
+        risk = str(analysis.get("risk_level", "LOW"))
+        trace_id = to_str(validation.get("trace_id"))
+
+        if risk == "HIGH":
+            high += 1
+        elif risk == "MEDIUM":
+            medium += 1
+        else:
+            low += 1
+
+        processed_outputs.append({
+            "signal_id": to_str(signal.get("signal_id")),
+            "trace_id": trace_id,
+            "risk_level": risk,
+            "latitude": to_float(signal.get("latitude")),
+            "longitude": to_float(signal.get("longitude")),
+            "anomaly_score": float(analysis.get("anomaly_score", 0))
+        })
+
+        api_signals.append({
+            "signal_id": to_str(signal.get("signal_id")),
+            "trace_id": trace_id,
+            "validation_status": validation.get("status"),
+            "risk_level": risk,
+            "confidence": analysis.get("confidence", 0),
+            "anomaly_type": to_str(analysis.get("anomaly_type")),
+            "explanation": to_str(analysis.get("explanation")),
+            "recommendation_signal": to_str(analysis.get("recommendation_signal")),
+            "feature_type": to_str(signal.get("feature_type")),
+            "value": signal.get("value"),
+            "latitude": to_float(signal.get("latitude")),
+            "longitude": to_float(signal.get("longitude")),
+        })
+
+        log_data("validation_logs.json", "VALIDATION", validation)
+        log_data("anomaly_logs.json", "ANALYSIS", analysis)
+
+    pattern = analyze_patterns(processed_outputs)
+    log_data("pattern_logs.json", "PATTERN", pattern)
+
+    summary = {
+        "total": len(signals),
+        "processed": len(api_signals),
+        "high": high,
+        "medium": medium,
+        "low": low,
+    }
+
+    return api_signals, pattern, summary
+
+
+# -----------------------------
 # ROOT
 # -----------------------------
+@app.get("/health")
+def health():
+    return {"status": "ok", "service": "nicai"}
+
+
+@app.get("/signals")
+def get_signals():
+    try:
+        api_signals, pattern, summary = process_signals()
+        if api_signals is None:
+            return error_response("Dataset not loaded")
+        return {"status": "SUCCESS", "signals": api_signals, "summary": summary, "pattern": pattern}
+    except Exception as e:
+        traceback.print_exc()
+        return error_response(str(e))
+
+
+@app.get("/patterns")
+def get_patterns():
+    try:
+        api_signals, pattern, summary = process_signals()
+        if api_signals is None:
+            return error_response("Dataset not loaded")
+        return {"status": "SUCCESS", "pattern": pattern, "summary": summary}
+    except Exception as e:
+        traceback.print_exc()
+        return error_response(str(e))
+
+
 @app.get("/", response_class=HTMLResponse)
 def home():
     return """
@@ -145,85 +260,46 @@ def evaluate(signals: list = Body(...)):
 def dashboard():
 
     try:
-        weather, aqi = load_data()
+        api_signals, pattern, summary = process_signals()
 
-        if weather is None or aqi is None:
+        if api_signals is None:
             return HTMLResponse("<h3>Error: Dataset not loaded</h3>")
 
-        signals = convert_to_signals(weather, aqi)
-
-        if not isinstance(signals, list) or not signals:
+        if not api_signals:
             return HTMLResponse("<h3>No data available</h3>")
 
         rows = ""
-        processed_outputs = []
+        for item in api_signals:
+            risk = item["risk_level"]
+            trace_id = item["trace_id"]
+            confidence = item["confidence"]
+            validation_status = item["validation_status"]
 
-        for signal in signals[:20]:
-
-            if not isinstance(signal, dict):
-                continue
-
-            # VALIDATION
-            validation = validate_signal(signal)
-
-            if not isinstance(validation, dict):
-                continue
-
-            if validation.get("status") == "REJECT":
-                continue
-
-            validation_status = validation.get("status")
-            trace_id = to_str(validation.get("trace_id"))
-
-            # ANALYSIS
-            analysis = analyze_signal(signal)
-
-            if not isinstance(analysis, dict):
-                continue
-
-            risk = str(analysis.get("risk_level", "LOW"))
-            confidence = analysis.get("confidence", 0)
-
-            # ACTION
             if risk == "HIGH":
                 step = "Escalation recommended"
                 action_label = "Escalate"
                 action_type = "eligible_for_escalation"
                 row_color = "#ffe6e6"
-
             elif risk == "MEDIUM":
                 step = "Needs review"
                 action_label = "Review"
                 action_type = "requires_review"
                 row_color = "#fff5cc"
-
             else:
                 step = "Monitor"
                 action_label = "Monitor"
                 action_type = "monitor"
                 row_color = ""
 
-            processed_outputs.append({
-                "signal_id": to_str(signal.get("signal_id")),
-                "trace_id": trace_id,
-                "risk_level": risk,
-                "latitude": to_float(signal.get("latitude")),
-                "longitude": to_float(signal.get("longitude")),
-                "anomaly_score": float(analysis.get("anomaly_score", 0))
-            })
-
-            log_data("validation_logs.json", "VALIDATION", validation)
-            log_data("anomaly_logs.json", "ANALYSIS", analysis)
-
             rows += f"""
             <tr style="background-color:{row_color};">
-                <td>{to_str(signal.get("signal_id"))}</td>
+                <td>{item["signal_id"]}</td>
                 <td>{trace_id}</td>
                 <td>{validation_status}</td>
                 <td>{risk}</td>
                 <td>{confidence}</td>
-                <td>{to_str(analysis.get("anomaly_type"))}</td>
-                <td>{to_str(analysis.get("explanation"))}</td>
+                <td>{item["anomaly_type"]}</td>
+                <td>{item["explanation"]}</td>
                 <td>{step}</td>
                 <td>
                     <button onclick="sendAction('{trace_id}','{action_type}','{risk}')">
@@ -233,11 +309,8 @@ def dashboard():
             </tr>
             """
 
-        pattern = analyze_patterns(processed_outputs)
-        log_data("pattern_logs.json", "PATTERN", pattern)
-
-        total_signals = len(signals)
-        total_anomalies = len([o for o in processed_outputs if o.get("risk_level") != "LOW"])
+        total_signals = summary["total"]
+        total_anomalies = summary["high"] + summary["medium"]
 
         try:
             with open("logs/action_logs.json") as f:

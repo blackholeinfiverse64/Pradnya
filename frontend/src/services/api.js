@@ -1,46 +1,41 @@
-const API =
-import.meta.env.VITE_SAMACHAR_API;
+const NICAI_API = import.meta.env.VITE_NICAI_API || "";
 
+async function request(path, options = {}) {
+  if (!NICAI_API) {
+    throw new Error("VITE_NICAI_API is not configured");
+  }
 
-export async function getSignals(){
-
-const response=
-await fetch(`${API}/signals`);
-
-return response.json();
-
+  const response = await fetch(`${NICAI_API}${path}`, options);
+  if (!response.ok) {
+    throw new Error(`Request failed: ${response.status}`);
+  }
+  return response.json();
 }
 
-
-export async function getPatterns(){
-
-const response=
-await fetch(`${API}/patterns`);
-
-return response.json();
-
+export async function getHealth() {
+  return request("/health");
 }
 
-
-export async function triggerAction(data){
-
-const response=
-await fetch(
-`${API}/action`,
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json"
-},
-
-body:
-JSON.stringify(data)
-
+export async function getSignals() {
+  const data = await request("/signals");
+  return data.signals || [];
 }
-);
 
-return response.json();
-
+export async function getPatterns() {
+  const data = await request("/patterns");
+  return data.pattern || null;
 }
+
+export async function getSignalsWithSummary() {
+  return request("/signals");
+}
+
+export async function triggerAction(data) {
+  return request("/action", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+}
+
+export { NICAI_API };

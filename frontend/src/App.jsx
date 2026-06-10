@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { getSignalsWithSummary, getPatterns, getHealth, NICAI_API } from "./services/api.js";
 
 // ── API Config Defaults ──────────────────────────────────────────────────────
 
@@ -12,7 +13,7 @@ const ENVIRONMENTAL_SCENARIO =
 
 // ── Mock Data ────────────────────────────────────────────────────────────────
 
-const SIGNALS = [
+const MOCK_SIGNALS = [
   { id: "SIG-20250519-124", type: "AQI", location: "Mumbai", risk: "HIGH", anomaly: "AQI_SPIKE", time: "12:44 PM", details: "Air Quality Index exceeded safe threshold by 340%. PM2.5 levels at 487 µg/m³. Source: IoT sensor grid cluster MH-W-07." },
   { id: "SIG-20250519-123", type: "Temperature", location: "Delhi", risk: "MEDIUM", anomaly: "TEMP_RISE", time: "12:43 PM", details: "Temperature anomaly of +4.2°C above seasonal baseline detected across 3 monitoring stations. Gradual increase over 48h." },
   { id: "SIG-20250519-122", type: "Weather", location: "Pune", risk: "HIGH", anomaly: "HEAVY_RAIN", time: "12:42 PM", details: "Rainfall intensity at 92mm/hr exceeding 50-year return period threshold. Flash flood advisory issued for downstream areas." },
@@ -20,7 +21,7 @@ const SIGNALS = [
   { id: "SIG-20250519-120", type: "Temperature", location: "Hyderabad", risk: "MEDIUM", anomaly: "TEMP_RISE", time: "12:40 PM", details: "Surface temperature anomaly detected. Urban heat island effect amplifying readings by +2.8°C in central zones." },
 ];
 
-const PATTERNS = [
+const MOCK_PATTERNS = [
   { id: "PATTERN-20250519-07", type: "REPEATED_ANOMALY", risk: "HIGH", zones: "Mumbai, Thane", count: 5 },
   { id: "PATTERN-20250519-06", type: "CORRELATED_SPIKE", risk: "MEDIUM", zones: "Delhi, Noida", count: 3 },
   { id: "PATTERN-20250519-05", type: "GRADUAL_INCREASE", risk: "LOW", zones: "Pune", count: 2 },
@@ -53,6 +54,31 @@ const NAV_ITEMS = [
 ];
 
 const RISK_COLORS = { HIGH: "#ef4444", MEDIUM: "#f59e0b", LOW: "#22c55e" };
+
+function mapApiSignal(signal) {
+  return {
+    id: signal.signal_id,
+    type: signal.feature_type || "Signal",
+    location: `${signal.latitude?.toFixed?.(2) ?? signal.latitude}, ${signal.longitude?.toFixed?.(2) ?? signal.longitude}`,
+    risk: signal.risk_level,
+    anomaly: signal.anomaly_type,
+    time: "Live",
+    details: signal.explanation,
+    traceId: signal.trace_id,
+  };
+}
+
+function mapApiPattern(pattern) {
+  if (!pattern || pattern.pattern_type === "NONE") return [];
+  return [{
+    id: pattern.pattern_id,
+    type: pattern.pattern_type,
+    risk: pattern.anomaly_count > 5 ? "HIGH" : pattern.anomaly_count > 2 ? "MEDIUM" : "LOW",
+    zones: (pattern.affected_zones || []).join(", ") || "Multiple zones",
+    count: pattern.anomaly_count,
+    summary: pattern.pattern_summary,
+  }];
+}
 
 // ── Shared Components ────────────────────────────────────────────────────────
 
@@ -172,6 +198,10 @@ export default function App() {
   const [activeNav, setActiveNav] = useState("overview");
   const [now, setNow] = useState(new Date());
   const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth > 768);
+  const [signals, setSignals] = useState(MOCK_SIGNALS);
+  const [patterns, setPatterns] = useState(MOCK_PATTERNS);
+  const [liveSummary, setLiveSummary] = useState(null);
+  const [usingLiveData, setUsingLiveData] = useState(false);
 
   const [traceSearch, setTraceSearch] = useState("");
   const [selectedSignal, setSelectedSignal] = useState(null);
@@ -188,7 +218,7 @@ export default function App() {
   const [pipelineLoading, setPipelineLoading] = useState(false);
   const [pipelineStep, setPipelineStep] = useState("idle");
 
-  const [healthStatus, setHealthStatus] = useState({ samachar: null, mitra: null });
+  const [healthStatus, setHealthStatus] = useState({ nicai: null, samachar: null, mitra: null });
   const [checkingHealth, setCheckingHealth] = useState(false);
 
   const [logs, setLogs] = useState(() => [{ time: new Date(), msg: "System initialized", type: "system" }]);
@@ -196,6 +226,36 @@ export default function App() {
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    if (!NICAI_API) return;
+
+    async function loadLiveData() {
+      try {
+        const [signalsData, pattern] = await Promise.all([
+          getSignalsWithSummary(),
+          getPatterns(),
+        ]);
+
+        if (signalsData.signals?.length) {
+          setSignals(signalsData.signals.map(mapApiSignal));
+          setLiveSummary(signalsData.summary);
+          setUsingLiveData(true);
+        }
+
+        const mappedPatterns = mapApiPattern(pattern);
+        if (mappedPatterns.length) {
+          setPatterns(mappedPatterns);
+        }
+
+        addLog("Loaded live data from NICAI API", "api");
+      } catch {
+        addLog("NICAI API unavailable — using demo data", "error");
+      }
+    }
+
+    loadLiveData();
   }, []);
 
   const isMobile = () => window.innerWidth <= 768;
@@ -209,7 +269,27 @@ export default function App() {
     addLog(`Navigated to ${NAV_ITEMS.find((n) => n.key === key)?.label}`, "nav");
     if (isMobile()) setSidebarOpen(false);
   };
-  const handleRefresh = () => { setLastRefreshed(new Date()); addLog("Data refreshed", "system"); };
+  const handleRefresh = async () => {
+    setLastRefreshed(new Date());
+    if (NICAI_API) {
+      try {
+        const signalsData = await getSignalsWithSummary();
+        if (signalsData.signals?.length) {
+          setSignals(signalsData.signals.map(mapApiSignal));
+          setLiveSummary(signalsData.summary);
+          setUsingLiveData(true);
+        }
+        const pattern = await getPatterns();
+        const mappedPatterns = mapApiPattern(pattern);
+        if (mappedPatterns.length) setPatterns(mappedPatterns);
+        addLog("Live data refreshed from NICAI API", "api");
+      } catch {
+        addLog("Refresh failed — NICAI API unreachable", "error");
+      }
+    } else {
+      addLog("Data refreshed", "system");
+    }
+  };
   const handleTraceSearch = () => {
     if (!traceSearch.trim()) return;
     const found = ACTIONS.find((a) => a.traceId.toLowerCase().includes(traceSearch.toLowerCase()));
@@ -240,11 +320,23 @@ export default function App() {
   async function checkHealth() {
     setCheckingHealth(true); addLog("Running health checks...", "system");
     const check = async (url) => { try { const res = await fetch(url, { signal: AbortSignal.timeout(8000) }); return res.ok ? "online" : "error"; } catch { return "offline"; } };
-    const [s, m] = await Promise.all([check(samacharUrl), check(mitraUrl)]);
-    setHealthStatus({ samachar: s, mitra: m }); addLog(`Health check complete — Samachar: ${s}, Mitra: ${m}`, "system"); setCheckingHealth(false);
+    const nicaiCheck = async () => {
+      if (!NICAI_API) return "not_configured";
+      try { await getHealth(); return "online"; } catch { return "offline"; }
+    };
+    const [n, s, m] = await Promise.all([nicaiCheck(), check(samacharUrl), check(mitraUrl)]);
+    setHealthStatus({ nicai: n, samachar: s, mitra: m });
+    addLog(`Health check complete — NICAI: ${n}, Samachar: ${s}, Mitra: ${m}`, "system");
+    setCheckingHealth(false);
   }
 
-  const stats = [
+  const stats = liveSummary ? [
+    { title: "TOTAL SIGNALS", value: String(liveSummary.total), change: usingLiveData ? "Live from NICAI API" : "Demo data", color: "#3b82f6", icon: "signals" },
+    { title: "HIGH RISK", value: String(liveSummary.high), change: "Processed signals", color: "#ef4444", icon: "highRisk" },
+    { title: "MEDIUM RISK", value: String(liveSummary.medium), change: "Processed signals", color: "#f59e0b", icon: "medRisk" },
+    { title: "LOW RISK", value: String(liveSummary.low), change: "Processed signals", color: "#22c55e", icon: "lowRisk" },
+    { title: "ACTIVE PATTERNS", value: String(patterns.length), change: usingLiveData ? "Live from NICAI API" : "Demo data", color: "#3b82f6", icon: "patterns" },
+  ] : [
     { title: "TOTAL SIGNALS", value: "124", change: "↑ 18% from yesterday", color: "#3b82f6", icon: "signals" },
     { title: "HIGH RISK", value: "18", change: "↑ 12% from yesterday", color: "#ef4444", icon: "highRisk" },
     { title: "MEDIUM RISK", value: "37", change: "↑ 5% from yesterday", color: "#f59e0b", icon: "medRisk" },
@@ -335,7 +427,7 @@ export default function App() {
                     <table style={S.table}>
                       <thead><tr>{["Signal ID", "Type", "Location", "Risk Level", "Anomaly", "Time", "Action"].map((h) => <th key={h} style={S.th}>{h}</th>)}</tr></thead>
                       <tbody>
-                        {SIGNALS.map((s) => (
+                        {signals.map((s) => (
                           <tr key={s.id} style={S.tr}>
                             <td style={S.td}><span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}><span style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e", flexShrink: 0 }} />{s.id}</span></td>
                             <td style={S.td}>{s.type}</td>
@@ -372,7 +464,7 @@ export default function App() {
                 <div style={{ ...S.card, flex: 1 }}>
                   <SectionHeader title="Active Patterns" btnText="View All" onBtn={() => navigate("patterns")} />
                   <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                    {PATTERNS.map((p) => (
+                    {patterns.map((p) => (
                       <div key={p.id} style={S.patternItem}>
                         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                           <span style={{ width: 8, height: 8, borderRadius: "50%", background: RISK_COLORS[p.risk] }} />
@@ -411,7 +503,7 @@ export default function App() {
             </>
           )}
 
-          {/* ═══ SIGNALS (Pipeline) ═══ */}
+          {/* ═══ signals (Pipeline) ═══ */}
           {activeNav === "signals" && (
             <>
               <div style={{ ...S.card, marginBottom: 20 }}>
@@ -449,7 +541,7 @@ export default function App() {
                   <table style={S.table}>
                     <thead><tr>{["Signal ID", "Type", "Location", "Risk Level", "Anomaly", "Time", "Action"].map((h) => <th key={h} style={S.th}>{h}</th>)}</tr></thead>
                     <tbody>
-                      {SIGNALS.map((s) => (
+                      {signals.map((s) => (
                         <tr key={s.id} style={S.tr}>
                           <td style={S.td}><span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}><span style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e", flexShrink: 0 }} />{s.id}</span></td>
                           <td style={S.td}>{s.type}</td>
@@ -487,7 +579,7 @@ export default function App() {
                   <table style={S.table}>
                     <thead><tr>{["Signal ID", "Type", "Location", "Risk Level", "Anomaly", "Time", "Action"].map((h) => <th key={h} style={S.th}>{h}</th>)}</tr></thead>
                     <tbody>
-                      {SIGNALS.filter((s) => s.anomaly !== "NORMAL").map((s) => (
+                      {signals.filter((s) => s.anomaly !== "NORMAL").map((s) => (
                         <tr key={s.id} style={S.tr}>
                           <td style={S.td}>{s.id}</td><td style={S.td}>{s.type}</td><td style={S.td}>{s.location}</td>
                           <td style={S.td}><RiskBadge level={s.risk} /></td><td style={S.td}>{s.anomaly}</td><td style={S.td}>{s.time}</td>
@@ -501,10 +593,10 @@ export default function App() {
             </>
           )}
 
-          {/* ═══ PATTERNS ═══ */}
+          {/* ═══ patterns ═══ */}
           {activeNav === "patterns" && (
             <div className="patterns-grid">
-              {PATTERNS.map((p) => (
+              {patterns.map((p) => (
                 <div key={p.id} style={S.card}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                     <span style={{ width: 10, height: 10, borderRadius: "50%", background: RISK_COLORS[p.risk] }} />
@@ -573,14 +665,29 @@ export default function App() {
           {activeNav === "health" && (
             <>
               <div className="health-grid">
-                {[{ name: "Samachar API", url: samacharUrl, status: healthStatus.samachar }, { name: "Mitra API", url: mitraUrl, status: healthStatus.mitra }].map((api) => (
+                {[
+                  { name: "NICAI API", url: NICAI_API || "Not configured (set VITE_NICAI_API)", status: healthStatus.nicai },
+                  { name: "Samachar API", url: samacharUrl || "Not configured", status: healthStatus.samachar },
+                  { name: "Mitra API", url: mitraUrl || "Not configured", status: healthStatus.mitra },
+                ].map((api) => (
                   <div key={api.name} style={S.card}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14, flexWrap: "wrap", gap: 8 }}>
                       <h3 style={{ margin: 0, fontSize: 16, fontWeight: 600, color: "#e2e8f0" }}>{api.name}</h3>
-                      {api.status && <span style={{ padding: "3px 12px", borderRadius: 4, fontSize: 11, fontWeight: 700, color: api.status === "online" ? "#22c55e" : "#ef4444", background: api.status === "online" ? "rgba(34,197,94,0.1)" : "rgba(239,68,68,0.1)", border: `1px solid ${api.status === "online" ? "rgba(34,197,94,0.25)" : "rgba(239,68,68,0.25)"}` }}>{api.status === "online" ? "ONLINE" : api.status === "offline" ? "OFFLINE" : "ERROR"}</span>}
+                      {api.status && (
+                        <span style={{
+                          padding: "3px 12px", borderRadius: 4, fontSize: 11, fontWeight: 700,
+                          color: api.status === "online" ? "#22c55e" : api.status === "not_configured" ? "#94a3b8" : "#ef4444",
+                          background: api.status === "online" ? "rgba(34,197,94,0.1)" : api.status === "not_configured" ? "rgba(148,163,184,0.1)" : "rgba(239,68,68,0.1)",
+                          border: `1px solid ${api.status === "online" ? "rgba(34,197,94,0.25)" : api.status === "not_configured" ? "rgba(148,163,184,0.25)" : "rgba(239,68,68,0.25)"}`,
+                        }}>
+                          {api.status === "online" ? "ONLINE" : api.status === "offline" ? "OFFLINE" : api.status === "not_configured" ? "NOT SET" : "ERROR"}
+                        </span>
+                      )}
                     </div>
                     <InfoRow label="Endpoint">{api.url}</InfoRow>
-                    <InfoRow label="Status">{api.status ? (api.status === "online" ? "Connected & responding" : "Unreachable") : "Not checked yet"}</InfoRow>
+                    <InfoRow label="Status">
+                      {api.status === "online" ? "Connected & responding" : api.status === "not_configured" ? "Environment variable not set" : api.status ? "Unreachable" : "Not checked yet"}
+                    </InfoRow>
                   </div>
                 ))}
               </div>
@@ -680,7 +787,7 @@ const CSS = `
   .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 20px; }
   .flex-row { display: flex; gap: 16px; margin-bottom: 20px; }
   .patterns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .health-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .health-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
 
   /* ── Footer ── */
   .nicai-footer {
