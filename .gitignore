@@ -23,5 +23,9 @@ frontend/node_modules/
 .DS_Store
 Thumbs.db
 
+# Binaries / large generated files
+ngrok.exe
+*.exe
+
 # Logs (runtime)
 logs/*.json
